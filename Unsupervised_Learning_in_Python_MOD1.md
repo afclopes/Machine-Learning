@@ -73,6 +73,9 @@ centroids_y = centroids[:,1]
 plt.scatter(centroids_x,centroids_y,marker='D',s=50)
 plt.show()
 ```
+
+![KMeansGraph](https://github.com/afclopes/Machine-Learning/blob/master/images/KMeans_clustering_graph1.svg)
+
 Scatter plots show centroids of model with KMeans fitting in the center of the scatter plot clusters of the new data. But how do 
 we know that this is in fact a model that fits well to our new data? How do we know that 3 clusters is the best? Can we evaluate the quality 
 of the clustering?

@@ -29,6 +29,8 @@ dendrogram(mergings,
 plt.show()
 ```
 
+![graph0](https://github.com/afclopes/Machine-Learning/blob/master/images/linkage_graph0.svg)
+
 Example normalising data differently:
 ```python
 # Import normalize
@@ -45,4 +47,4 @@ mergings = linkage(normalized_movements,method='complete')
 dendrogram(mergings,labels=companies,leaf_rotation=90,leaf_font_size=6)
 plt.show()
 ```
-![graph1](https://github.com/afclopes/Machine-Learning/blob/master/linkage_graph1.svg)
+![graph1](https://github.com/afclopes/Machine-Learning/blob/master/images/linkage_graph1.svg)

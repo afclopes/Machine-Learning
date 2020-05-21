@@ -45,4 +45,4 @@ mergings = linkage(normalized_movements,method='complete')
 dendrogram(mergings,labels=companies,leaf_rotation=90,leaf_font_size=6)
 plt.show()
 ```
-![graph1](/Documents/Cambridge/Postdoc/Seminars-Workshops/ML-Unsupervised_Python/linkage_graph1.svg)
+![graph1](https://github.com/afclopes/Machine-Learning/blob/master/linkage_graph1.svg)

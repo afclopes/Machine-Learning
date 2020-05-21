@@ -7,10 +7,13 @@ This can be done with:
   - agglomeration hierarchical clustering
   - divisive hierarchical clustering
   
-To compute hierarchical clustering we will use the library *SciPy* from python. And we will have to import from `scipy.cluster.hierarchy` 
-two packages called `dendrogram` and `linkage`.
+To compute hierarchical clustering we will use the library *SciPy* from python. And we will have to import from `scipy.cluster.hierarchy` packages called `dendrogram`, `linkage`, and `fcluster`.
 
-Example of dendrogram and linkage:
+'Complete' linkage means that the distance between the clusters is measured as the maximum distance between the samples (clusters) based on the furthest points of those clusters.
+
+'Single' linkage means that the distance between the clusters is measures as the closest distance between the clusters based on the closest points of those clusters.
+
+Example of dendrogram and linkage with method 'complete':
 ```python
 # Perform the necessary imports
 from scipy.cluster.hierarchy import linkage, dendrogram
@@ -31,6 +34,24 @@ plt.show()
 
 ![graph0](https://github.com/afclopes/Machine-Learning/blob/master/images/linkage_graph0.svg)
 
+Example of dendrogram and linkage with method 'single':
+
+``sql
+# Perform the necessary imports
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import linkage, dendrogram
+
+# Calculate the linkage: mergings
+mergings = linkage(samples, method='single')
+
+# Plot the dendrogram
+dendrogram(mergings,labels=country_names,leaf_rotation=90,leaf_font_size=6)
+plt.show()
+```
+![graph0](https://github.com/afclopes/Machine-Learning/blob/master/images/linkage_graph2.svg)
+
+These dendrogams are quite different. this goes to show that different linkage methods give different results.
+
 Example normalising data differently:
 ```python
 # Import normalize
@@ -48,3 +69,7 @@ dendrogram(mergings,labels=companies,leaf_rotation=90,leaf_font_size=6)
 plt.show()
 ```
 ![graph1](https://github.com/afclopes/Machine-Learning/blob/master/images/linkage_graph1.svg)
+
+
+Apart from visualisations, hierarchical clustering can also be used to find cluster labels at intermediate stages.
+This can be done by finding different heights on the dendrogram, which shows the distance between merging clusters

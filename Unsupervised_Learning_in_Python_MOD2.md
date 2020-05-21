@@ -36,7 +36,7 @@ plt.show()
 
 Example of dendrogram and linkage with method 'single':
 
-``sql
+```sql
 # Perform the necessary imports
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import linkage, dendrogram
